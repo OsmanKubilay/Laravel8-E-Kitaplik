@@ -12,15 +12,13 @@
                         <span class="count bg-success"></span>
                     </div>
                     <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                        <span>Gold Member</span>
-                    </div>
-                    <div class="info">
                         @auth
                             <a href="#" class="d-block">{{Auth::user()->name}}</a>
                             <a href="{{ route('admin_logout') }}" class="d-block">Logout</a>
                         @endauth
+                        <span>Gold Member</span>
                     </div>
+
                 </div>
                 <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
                 <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">

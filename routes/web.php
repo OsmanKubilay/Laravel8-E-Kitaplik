@@ -15,7 +15,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home',[\App\Http\Controllers\HomeController::class,'index'])->name('home');
 
 //Admin
-Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class,'index']) ->name('adminhome');
+Route::middleware('auth')->prefix('admin')->group(function (){
+    Route::get('/', [\App\Http\Controllers\Admin\HomeController::class,'index']) ->name('adminhome');
+    Route::get('/register', [\App\Http\Controllers\Admin\HomeController::class,'adminRegister']) ->name('admin_register');
+
+    Route::get('/category', [\App\Http\Controllers\Admin\CategoryController::class,'index']) ->name('admin_category');
+    Route::get('/category/add', [\App\Http\Controllers\Admin\CategoryController::class,'add']) ->name('admin_category_add');
+    Route::get('/category/update', [\App\Http\Controllers\Admin\CategoryController::class,'update']) ->name('admin_category_update');
+    Route::get('/category/delete', [\App\Http\Controllers\Admin\CategoryController::class,'destroy']) ->name('admin_category_delete');
+    Route::get('/category/show', [\App\Http\Controllers\Admin\CategoryController::class,'show']) ->name('admin_category_show');
+});
+
+
 Route::get('/admin/login', [\App\Http\Controllers\HomeController::class,'login']) ->name('admin_login');
 Route::get('/admin/logout', [\App\Http\Controllers\Admin\HomeController::class,'logout']) ->name('admin_logout');
 Route::post('/admin/logincheck', [\App\Http\Controllers\HomeController::class,'logincheck']) ->name('admin_logincheck');
