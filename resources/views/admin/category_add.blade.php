@@ -34,9 +34,52 @@
 
                 <div class="card-body">
 
-                    Add Category Form
 
-                </div>
+                            <form action="{{route('admin_category_create')}}" class="forms-sample" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <label> Parent </label>
+                                    <select class="form-control" name="parent_id" >
+                                        <option value="0" selected="selected"> Main Category </option>
+
+                                        @foreach( $datalist as $rs)
+                                            <option value="{{ $rs->id }}">{{ $rs->title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label> Title </label>
+                                    <input type="text" name="title" class="form-control"  >
+                                </div>
+
+                                <div class="form-group">
+                                    <label > Keywords </label>
+                                    <input type="text" name="keywords" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label> Description </label>
+                                    <input type="text" name="description" class="form-control"  >
+                                </div>
+                                <div class="form-group">
+                                    <label> Slug </label>
+                                    <input type="text" class="form-control"  >
+                                </div>
+                                <div class="form-group">
+                                    <label >Status</label>
+                                    <select class="form-control" name="status" >
+                                        <option selected="selected"> False </option>
+                                        <option>True</option>
+                                    </select>
+
+                                </div>
+
+                                <button type="submit" class="btn btn-primary mr-2">Add Category</button>
+
+                            </form>
+                        </div>
+
+
+
                 <!-- /.card-body -->
                 <div class="card-footer">
                     Footer

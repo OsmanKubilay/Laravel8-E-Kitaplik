@@ -29,39 +29,39 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Category List</h3>
+                    <a href="{{route('admin_category_add')}}" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a>
                 </div>
-                <div class="">
-                    <div class="card strpied-tabled-with-hover">
 
-                        <div class="card-body table-full-width table-responsive">
-                            <table class="table table-hover table-striped">
-                                <thead>
-                                <th>ID</th>
-                                <th>Parent</th>
-                                <th>Title</th>
-                                <th>Status</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                                </thead>
-                                <tbody>
-                                @foreach( $datalist as $rs)
-                                    <p></p>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Id </th>
+                            <th>Parent </th>
+                            <th>Title(s)</th>
+                            <th>Status</th>
+                            <th>Edit </th>
+                            <th>Delete </th>
+                        </tr>
+                        </thead>
 
-                                <tr>
-                                    <td>{{ $rs->id }}</td>
-                                    <td>{{ $rs->parent_id }}</td>
-                                    <td>{{ $rs->title }}</td>
-                                    <td>{{ $rs->status }}</td>
-                                    <td>Edit</td>
-                                    <td>Delete</td>
-                                </tr>
-                                @endforeach
-                                </tbody>
+                        <tbody>
+                        @foreach( $datalist as $rs)
+                            <p></p>
 
-                            </table>
-                        </div>
-                    </div>
+                            <tr>
+                                <td>{{ $rs->id }}</td>
+                                <td>{{ $rs->parent_id }}</td>
+                                <td>{{ $rs->title }}</td>
+                                <td>{{ $rs->status }}</td>
+                                <td>Edit</td>
+                                <td><a href="{{route('admin_category_delete', ['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure ')"> Delete </a>  </td>
+                            </tr>
+                        @endforeach
+
+
+                    </table>
                 </div>
                 <div class="card-body">
 
@@ -83,3 +83,39 @@
 
 @endsection
 
+@section('footer')
+    <script src="{{asset('assets')}}/admin/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{asset('assets')}}/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="{{asset('assets')}}/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/jszip/jszip.min.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="{{asset('assets')}}/admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+
+@endsection
