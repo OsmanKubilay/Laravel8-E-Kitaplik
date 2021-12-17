@@ -24,9 +24,9 @@ Tip 2: you can also add an image using data-image tag
                 </a>
             </li>
             <li>
-                <a class="nav-link" href="./table.html">
+                <a class="nav-link" href="{{route('admin_products')}}">
                     <i class="nc-icon nc-notes"></i>
-                    <p>Table List</p>
+                    <p>Products</p>
                 </a>
             </li>
             <li>
