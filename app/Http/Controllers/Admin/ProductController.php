@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -26,7 +28,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $datalist=Category::all();
+        return view('admin.product_add', ['datalist' => $datalist]);
     }
 
     /**
@@ -38,6 +41,25 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        $data = new Product;
+        $data->title = $request->input('title');
+        $data->keywords  = $request->input('keywords');
+        $data->description  = $request->input('descriptions');
+        $data->slug = $request->input('slug');
+        $data->status = $request->input('status');
+
+
+        $data->category_id= $request->input('category_id');
+        $data->user_id=Auth::id();
+        $data->price= $request->input('price');
+        $data->quantity= $request->input('quantity');
+        $data->minquantity= $request->input('minquantity');
+        $data->tax= $request->input('tax');
+        $data->detail= $request->input('detail');
+        $data->save();
+        return redirect()->route('admin_products');
+
+
     }
 
     /**
