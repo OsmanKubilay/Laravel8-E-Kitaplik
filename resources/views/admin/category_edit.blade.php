@@ -40,11 +40,11 @@
                                 <div class="form-group">
                                     <label> Parent </label>
                                     <select class="form-control" name="parent_id" style="..." >
-                                        <option value="{{$data->parent_id}}" selected="selected">  </option>
+
                                         <option > Main Category </option>
 
                                         @foreach( $datalist as $rs)
-                                            <option value="{{ $rs->id }}">{{ $rs->title }}</option>
+                                            <option value="{{ $rs->id }}"@if($rs->id==$data->parent_id) selected="selected"@endif>{{ $rs->title }}</option>
                                         @endforeach
                                     </select>
                                 </div>
