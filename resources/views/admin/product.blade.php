@@ -43,6 +43,7 @@
                             <th>Quantity</th>
                             <th>Price </th>
                             <th>Image </th>
+                            <th>Image Gallery </th>
                             <th>Status </th>
                             <th style="..." colspan="2"> Actions </th>
                         </tr>
@@ -63,6 +64,7 @@
                                         <img src="{{Storage::url($rs->image)}}" height="30" alt="">
                                     @endif
                                 </td>
+                                <td><a href="{{route('admin_image_add',['product_id'=>$rs->id])}}">Gallery</a> </td>
                                 <td>{{ $rs->status }}</td>
                                 <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}"> Edit </a></td>
                                 <td><a href="{{route('admin_product_delete', ['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure ')"> Delete </a>  </td>
