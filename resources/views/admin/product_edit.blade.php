@@ -40,7 +40,7 @@
                 <div class="card-body">
 
 
-                            <form action="{{route('admin_product_update',['id'=>$data->id])}}" class="forms-sample" method="post">
+                            <form action="{{route('admin_product_update',['id'=>$data->id])}}" class="forms-sample" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label> Parent </label>
@@ -89,6 +89,11 @@
                                         });
                                     </script>
                                 </div>
+                                <div class="form-group">
+                                    <label> Image </label>
+                                    <input type="file" name="image" class="form-control"  >
+                                </div>
+
                                 <div class="form-group">
                                     <label> Slug </label>
                                     <input type="text" name="slug" value="{{$data->slug}}" class="form-control"  >

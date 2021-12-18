@@ -2,10 +2,10 @@
 
 @section('title','Add Product')
 
-<<<<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>>>>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 @section('content')
 
@@ -40,7 +40,7 @@
                 <div class="card-body">
 
 
-                            <form action="{{route('admin_product_store')}}" class="forms-sample" method="post">
+                            <form action="{{route('admin_product_store')}}" class="forms-sample" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label> Parent </label>
@@ -89,6 +89,12 @@
                                         });
                                     </script>
                                 </div>
+
+                                <div class="form-group">
+                                    <label> Image </label>
+                                    <input type="file" name="image" class="form-control"  >
+                                </div>
+
                                 <div class="form-group">
                                     <label> Slug </label>
                                     <input type="text" class="form-control"  >
