@@ -79,9 +79,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Product $product, $id)
     {
         //
+        $data = Product::find($id);
+        $datalist = Category::all();
+        return view('admin.product_edit', ['data' => $data,'datalist'=>$datalist]);
     }
 
     /**
@@ -91,9 +94,25 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Product $product,$id)
     {
-        //
+        $data=Product::find($id);
+        $data->title = $request->input('title');
+        $data->keywords  = $request->input('keywords');
+        $data->description  = $request->input('descriptions');
+        $data->slug = $request->input('slug');
+        $data->status = $request->input('status');
+
+
+        $data->category_id= $request->input('category_id');
+        $data->user_id=Auth::id();
+        $data->price= $request->input('price');
+        $data->quantity= $request->input('quantity');
+        $data->minquantity= $request->input('minquantity');
+        $data->tax= $request->input('tax');
+        $data->detail= $request->input('detail');
+        $data->save();
+        return redirect()->route('admin_products');
     }
 
     /**
