@@ -16,6 +16,7 @@
     <link href="{{asset('assets')}}/admin/assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('assets')}}/admin/assets/css/demo.css" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrapper">
@@ -63,7 +64,6 @@
         demo.initDashboardPageCharts();
 
         demo.showNotification();
-
     });
 </script>
 

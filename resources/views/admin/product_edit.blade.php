@@ -2,6 +2,11 @@
 
 @section('title','Edit Product')
 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
 @section('content')
 
     <!-- Content Wrapper. Contains page content -->
@@ -77,7 +82,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label> Detail </label>
-                                    <input type="text" name="detail" value="{{$data->detail}}" class="form-control"  >
+                                    <textarea id="summernote" name="detail">{{$data->detail}} </textarea>
+                                    <script>
+                                        $(document).ready(function() {
+                                            $('#summernote').summernote();
+                                        });
+                                    </script>
                                 </div>
                                 <div class="form-group">
                                     <label> Slug </label>
