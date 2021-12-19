@@ -7,7 +7,7 @@
 
     <ul class="dropdown-menu">
         <li class="header-title"> Sidebar Style</li>
-        <li class="adjustments-line"><
+        <li class="adjustments-line">
             <a href="javascript:void(0)" class="switch-trigger">
                 <p>Background Image</p>
                 <label class="switch">
@@ -34,7 +34,7 @@
 
         <li class="active">
             <a class="img-holder switch-trigger" href="javascript:void(0)">
-                <img src="<{{asset('assets')}}/admin/>assets/img/sidebar-1.jpg" alt="" />
+                <img src="<{{asset('assets')}}/admin/assets/img/sidebar-1.jpg" alt="" />
             </a>
         </li>
         <li>
