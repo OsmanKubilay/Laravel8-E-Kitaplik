@@ -54,9 +54,9 @@ Tip 2: you can also add an image using data-image tag
                 </a>
             </li>
             <li class="nav-item active active-pro">
-                <a class="nav-link active" href="upgrade.html">
+                <a class="nav-link active" href="{{route('admin_setting')}}">
                     <i class="nc-icon nc-alien-33"></i>
-                    <p>Upgrade to PRO</p>
+                    <p>Settings</p>
                 </a>
             </li>
         </ul>
