@@ -216,11 +216,12 @@
                                     </div>
 
                                 </div>
-
+                                <button type="submit" class="btn btn-primary mr-2">Update Setting</button>
                                 <!-- /.card -->
                             </div>
+
                         </div>
-                        <button type="submit" class="btn btn-primary mr-2">Update Setting</button>
+
                     </div>
                 </div>
             </section>
