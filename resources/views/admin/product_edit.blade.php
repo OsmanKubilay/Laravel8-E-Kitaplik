@@ -88,6 +88,9 @@
                                 <div class="form-group">
                                     <label> Image </label>
                                     <input type="file" name="image" class="form-control"  >
+                                    @if($data->image)
+                                        <img src="{{Storage::url($data->image)}}" height="60" alt="">
+                                    @endif
                                 </div>
 
                                 <div class="form-group">
