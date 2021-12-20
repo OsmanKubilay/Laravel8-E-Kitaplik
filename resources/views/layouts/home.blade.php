@@ -1,87 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- basic -->
+
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- mobile metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!-- site metas -->
-    <title>Kitaplik</title>
-    <meta name="keywords" content="Free Web Tutorials">
-    <meta name="description" content="HTML, CSS, Javascript">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Sailor Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
     <meta name="author" content="Hatali Miçe">
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.min.css">
-    <!-- style css -->
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/style.css">
-    <!-- Responsive-->
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/responsive.css">
-    <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/jquery.mCustomScrollbar.min.css">
-    <!-- Tweaks for older IEs-->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <!-- owl stylesheets -->
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Favicons -->
+    <link href="{{ asset('assets') }}/img/favicon.png" rel="icon">
+    <link href="{{ asset('assets') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('assets') }}/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet">
+
+
 </head>
 <!-- body -->
 <body class="main-layout">
+
 @include('home._header')
-@include('home._topcontent')
+@include('home._slider')
 @include('home._midcontent')
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 @include('home._footer')
 
-
 </body>
-<script src="{{ asset('assets') }}/js/jquery.min.js"></script>
-<script src="{{ asset('assets') }}/js/popper.min.js"></script>
-<script src="{{ asset('assets') }}/js/bootstrap.bundle.min.js"></script>
-<script src="{{ asset('assets') }}/js/jquery-3.0.0.min.js"></script>
-<script src="{{ asset('assets') }}/js/plugin.js"></script>
-<!-- sidebar -->
-<script src="{{ asset('assets') }}/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="{{ asset('assets') }}/js/custom.js"></script>
-<!-- javascript -->
-<script src="{{ asset('assets') }}/js/owl.carousel.js"></script>
-<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $(".fancybox").fancybox({
-            openEffect: "none",
-            closeEffect: "none"
-        });
+<!-- Vendor JS Files -->
+<script src="{{ asset('assets') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets') }}/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="{{ asset('assets') }}/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="{{ asset('assets') }}/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="{{ asset('assets') }}/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="{{ asset('assets') }}/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="{{asset('assets')}}/js/main.js"></script>
 
 
-        $('#myCarousel').carousel({
-            interval: false
-        });
-
-        //scroll slides on swipe for touch enabled devices
-
-        $("#myCarousel").on("touchstart", function(event){
-
-            var yClick = event.originalEvent.touches[0].pageY;
-            $(this).one("touchmove", function(event){
-
-                var yMove = event.originalEvent.touches[0].pageY;
-                if( Math.floor(yClick - yMove) > 1 ){
-                    $(".carousel").carousel('next');
-                }
-                else if( Math.floor(yClick - yMove) < -1 ){
-                    $(".carousel").carousel('prev');
-                }
-            });
-            $(".carousel").on("touchend", function(){
-                $(this).off("touchmove");
-            });
-        });
-</script>
 </html>

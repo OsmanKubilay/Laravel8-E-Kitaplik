@@ -1,132 +1,41 @@
-<div class="header_section">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="logo"><a href="#"><img src="{{ asset('assets') }}/images/logo.png"></a></div>
-            </div>
-            <div class="col-sm-9">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-item nav-link" href="{{route('home')}}">Home</a>
-                            <a class="nav-item nav-link" href="collection.html">Collection</a>
-                            <a class="nav-item nav-link" href="shoes.html">Shoes</a>
-                            <a class="nav-item nav-link" href="racing boots.html">Racing Boots</a>
-                            <a class="nav-item nav-link" href="contact.html">Contact</a>
-                            <a class="nav-item nav-link last" href="#"><img src="{{ asset('assets') }}/images/search_icon.png"></a>
-                            <a class="nav-item nav-link last" href="contact.html"><img src="{{ asset('assets') }}/images/shop_icon.png"></a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <div class="banner_section">
-        <div class="container-fluid">
-            <section class="slide-wrapper">
-                <div class="container-fluid">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                        </ol>
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
 
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-sm-2 padding_0">
-                                        <p class="mens_taital">Men Shoes</p>
-                                        <div class="page_no">0/2</div>
-                                        <p class="mens_taital_2">Men Shoes</p>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <div class="banner_taital">
-                                            <h1 class="banner_text">New Running Shoes </h1>
-                                            <h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <button class="buy_bt">Buy Now</button>
-                                            <button class="more_bt">See More</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <div class="shoes_img"><img src="{{ asset('assets') }}/images/running-shoes.png"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-sm-2 padding_0">
-                                        <p class="mens_taital">Men Shoes</p>
-                                        <div class="page_no">0/2</div>
-                                        <p class="mens_taital_2">Men Shoes</p>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <div class="banner_taital">
-                                            <h1 class="banner_text">New Running Shoes </h1>
-                                            <h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <button class="buy_bt">Buy Now</button>
-                                            <button class="more_bt">See More</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <div class="shoes_img"><img src="{{ asset('assets') }}/images/running-shoes.png"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-sm-2 padding_0">
-                                        <p class="mens_taital">Men Shoes</p>
-                                        <div class="page_no">0/2</div>
-                                        <p class="mens_taital_2">Men Shoes</p>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <div class="banner_taital">
-                                            <h1 class="banner_text">New Running Shoes </h1>
-                                            <h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <button class="buy_bt">Buy Now</button>
-                                            <button class="more_bt">See More</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <div class="shoes_img"><img src="{{ asset('assets') }}/images/running-shoes.png"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-sm-2 padding_0">
-                                        <p class="mens_taital">Men Shoes</p>
-                                        <div class="page_no">0/2</div>
-                                        <p class="mens_taital_2">Men Shoes</p>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <div class="banner_taital">
-                                            <h1 class="banner_text">New Running Shoes </h1>
-                                            <h1 class="mens_text"><strong>Men's Like Plex</strong></h1>
-                                            <p class="lorem_text">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            <button class="buy_bt">Buy Now</button>
-                                            <button class="more_bt">See More</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <div class="shoes_img"><img src="{{ asset('assets') }}/images/running-shoes.png"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <h1 class="logo me-auto"><a href="index.html">Sailor</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+
+                <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+
+                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">Deep Drop Down 1</a></li>
+                                <li><a href="#">Deep Drop Down 2</a></li>
+                                <li><a href="#">Deep Drop Down 3</a></li>
+                                <li><a href="#">Deep Drop Down 4</a></li>
+                                <li><a href="#">Deep Drop Down 5</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="getstarted">Get Started</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
     </div>
-</div>
+</header><!-- End Header -->
