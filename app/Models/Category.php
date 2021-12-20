@@ -8,10 +8,26 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+    //protected $appends=['parent',];
 
 #ONE TO MANY(INVERSE) / BELONGS TO
     public function products()
     {
         return $this->hasMany(Product::class);
     }
+    #ONE TO MANY(INVERSE) - Tersi
+    public function parent()
+    {
+        return $this->belongsTo(Category::class,'parent_id');
+    }
+    # One to Many
+    public function children()
+    {
+        return $this->hasMany(Category::class,'parent_id');
+    }
+
+
+
 }
+
+

@@ -48,26 +48,20 @@
 
                         <tbody>
                         @foreach( $datalist as $rs)
-                            <p></p>
-
                             <tr>
                                 <td>{{ $rs->id }}</td>
-                                <td>{{ $rs->parent_id }}</td>
+                                <td>
+                                    {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}
+                                </td>
                                 <td>{{ $rs->title }}</td>
                                 <td>{{ $rs->status }}</td>
                                 <td><a href="{{route('admin_category_edit',['id'=>$rs->id])}}"> Edit </a></td>
                                 <td><a href="{{route('admin_category_delete', ['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure ')"> Delete </a>  </td>
                             </tr>
                         @endforeach
-
-
                     </table>
                 </div>
-                <div class="card-body">
 
-
-
-                </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                     Footer
