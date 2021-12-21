@@ -16,6 +16,7 @@
                 <li class="dropdown"><a href="#"><span>Kategoriler</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         @foreach($parentCategories as $rs)
+
                             <li class="dropdown"><a href="#"><span>{{$rs->title}}</span> <i class="bi bi-chevron-down"></i></a>
                                 <ul>
                                 @if(count($rs->children))

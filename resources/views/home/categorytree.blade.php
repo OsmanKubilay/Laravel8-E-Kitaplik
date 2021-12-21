@@ -1,7 +1,8 @@
+
 @foreach($children as $subcategory)
 
         @if(count($subcategory->children))
-            <li class="active" style="..."> {{$subcategory->title}}</li>
+            <li class="dropdown"><a href="#"><span>{{$subcategory->title}}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
                 @include('home.categorytree', ['children'=>$subcategory->children])
             </ul>
