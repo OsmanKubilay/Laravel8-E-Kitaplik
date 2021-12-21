@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Sailor Bootstrap Template - Index</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>@yield('title')</title>
+    <meta content="@yield('description')" name="description">
+    <meta content="@yield('keywords')" name="keywords">
     <meta name="author" content="Hatali Miçe">
     <!-- Favicons -->
     <link href="{{ asset('assets') }}/img/favicon.png" rel="icon">
@@ -35,7 +35,7 @@
 
 @include('home._header')
 @include('home._slider')
-@include('home._midcontent')
+@include('home._content')
 
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

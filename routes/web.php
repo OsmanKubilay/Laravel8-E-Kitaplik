@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home',[\App\Http\Controllers\HomeController::class,'index'])->name('home');
+Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name('home');
 
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function (){
