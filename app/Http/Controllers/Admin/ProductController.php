@@ -66,8 +66,6 @@ class ProductController extends Controller
         $data->save();
         return redirect()->route('admin_products');
 
-
-
     }
 
     /**

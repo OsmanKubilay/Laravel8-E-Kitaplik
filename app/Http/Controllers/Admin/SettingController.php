@@ -85,7 +85,7 @@ class SettingController extends Controller
         $data=Setting::find($id);
         $data->title = $request->input('title');
         $data->keywords  = $request->input('keywords');
-        $data->description  = $request->input('descriptions');
+        $data->description  = $request->input('description');
         $data->company = $request->input('company');
         $data->adress= $request->input('adress');
         $data->phone= $request->input('phone');

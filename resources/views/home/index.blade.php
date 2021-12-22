@@ -1,14 +1,10 @@
 @extends('layouts.home')
 
-@section('title','Laravel E-Kütüphane Sitesi')
+@section('title',$setting->title)
 
-@section('description')
+@section('description') {{$setting->description}} @endsection
 
-        Türkiyenin en güvenilir ve en çok kitap bulunduran kütüphanesi.
-
-@endsection
-
-@section('keywords','Roman, Ders Kitabı, Soru Kitabi, Edebiyat Kitabı')
+@section('keywords',$setting->keywords)
 
 @section('content')
     <main id="main">

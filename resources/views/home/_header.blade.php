@@ -11,7 +11,7 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="index.html" class="active">Kitaplık</a></li>
+                <li><a href="{{'/home'}}" class="active">Anasayfa</a></li>
 
                 <li class="dropdown"><a href="#"><span>Kategoriler</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
@@ -28,15 +28,35 @@
                         @endforeach
                     </ul>
                 </li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="{{'/aboutus'}}">Aboutus</a></li>
+                <li><a href="{{'/references'}}">References</a></li>
+                <li><a href="{{'/fag'}}">fag</a></li>
+                <li><a href="#">xxxxx</a></li>
 
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{'/contact'}}">Contact</a></li>
                 <li><a href="index.html" class="getstarted">Get Started</a></li>
+
+                <div class="pull-right">
+                    @auth()
+                    <li class="dropdown"><a href="#"><span>{{Auth::user()->name}}</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="{{route('logout')}}">Logout</a></li>
+                        </ul>
+                        @endauth
+                        @guest()
+                        <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="{{'/login'}}">Login</a></li>
+                            <li><a href="{{'/register'}}">Register</a></li>
+                        </ul>
+                        </li>
+                        @endguest
+                    </li>
+
+                </div>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
+            </ul>
         </nav><!-- .navbar -->
 
     </div>

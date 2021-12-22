@@ -13,10 +13,32 @@ class HomeController extends Controller
     {
         return Category::where('parent_id', '=', 0)->with('children')->get();
     }
+    public static function getsetting()
+    {
+        return Setting::first();
+    }
     public function index()
     {
-        $data= Setting::first();
-        return view('home.index',['data'=>$data]);
+        $setting= Setting::first();
+        return view('home.index',['setting'=>$setting]);
+    }
+    public function aboutus()
+    {
+        return view('home.about');
+    }
+
+    public function references()
+    {
+        return view('home.references');
+    }
+
+    public function faq()
+    {
+        return view('home.faq');
+    }
+    public function contact()
+    {
+        return view('home.contact');
     }
     public function login()
     {
@@ -48,6 +70,6 @@ class HomeController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/home');
+        return redirect('/');
     }
 }
