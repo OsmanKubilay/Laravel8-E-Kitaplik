@@ -1,5 +1,7 @@
 <!-- ======= Footer ======= -->
-
+@php
+    $setting=\App\Http\Controllers\HomeController::getsetting()
+@endphp
 <footer id="footer">
     <div class="footer-top">
         <div class="container">

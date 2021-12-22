@@ -7,6 +7,7 @@
 @section('keywords',$setting->keywords)
 
 @section('content')
+    @include('home._slider')
     <main id="main">
 
         <!-- ======= About Section ======= -->

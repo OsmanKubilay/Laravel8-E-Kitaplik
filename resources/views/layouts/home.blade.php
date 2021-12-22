@@ -34,7 +34,6 @@
 <body class="main-layout">
 
 @include('home._header')
-@include('home._slider')
 @yield('content')
 
 

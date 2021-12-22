@@ -19,9 +19,9 @@
 
                             <li class="dropdown"><a href="#"><span>{{$rs->title}}</span> <i class="bi bi-chevron-down"></i></a>
                                 <ul>
-                                @if(count($rs->children))
-                                    @include('home.categorytree',['children'=>$rs->children])
-                                @endif
+                                    @if(count($rs->children))
+                                        @include('home.categorytree',['children'=>$rs->children])
+                                    @endif
                                 </ul>
                             </li>
 
@@ -34,26 +34,31 @@
                 <li><a href="#">xxxxx</a></li>
 
                 <li><a href="{{'/contact'}}">Contact</a></li>
-                <li><a href="index.html" class="getstarted">Get Started</a></li>
+
 
                 <div class="pull-right">
                     @auth()
-                    <li class="dropdown"><a href="#"><span>{{Auth::user()->name}}</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="{{route('logout')}}">Logout</a></li>
-                        </ul>
-                        @endauth
-                        @guest()
+                        <li class="dropdown"><a href="#"><span>{{Auth::user()->name}}</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="{{route('myprofile')}}">My Profile</a></li>
+                                <li><a href="#">My Wishlist</a></li>
+                                <li><a href="#">My Reviews</a></li>
+                                <li><a href="#">My Messages</a></li>
+                                <li><a href="{{route('logout')}}">Logout</a></li>
+                            </ul>
+                    @endauth
+                    @guest()
                         <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="{{'/login'}}">Login</a></li>
-                            <li><a href="{{'/register'}}">Register</a></li>
-                        </ul>
+                            <ul>
+                                <li><a href="{{'/login'}}">Login</a></li>
+                                <li><a href="{{'/register'}}">Register</a></li>
+                            </ul>
                         </li>
                         @endguest
-                    </li>
+                        </li>
 
                 </div>
+                <li><a href="index.html" class="getstarted">Get Started</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
             </ul>
