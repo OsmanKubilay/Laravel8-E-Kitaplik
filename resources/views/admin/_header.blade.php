@@ -54,13 +54,14 @@
                         <a class="dropdown-item" href="#">Separated link</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#pablo">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="no-icon">{{Auth::user()->name }}</span>
+                    </a>
                         @auth
-                        <span class="no-icon">
-                            <a href="#" class="d-block">{{Auth::user()->name }}</a>
-                            <a href="{{route('admin_logout')}}" class="d-block">Logout</a>
-                        </span>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a href="{{route('logout')}}" class="dropdown-item" >Logout</a>
+                        </div>
                         @endauth
                     </a>
                 </li>

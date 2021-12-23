@@ -24,12 +24,14 @@ class HomeController extends Controller
     }
     public function aboutus()
     {
-        return view('home.about');
+        $setting= Setting::first();
+        return view('home.about',['setting'=>$setting]);
     }
 
     public function references()
     {
-        return view('home.references');
+        $setting= Setting::first();
+        return view('home.references',['setting'=>$setting]);
     }
 
     public function faq()
@@ -38,7 +40,8 @@ class HomeController extends Controller
     }
     public function contact()
     {
-        return view('home.contact');
+        $setting= Setting::first();
+        return view('home.contact',['setting'=>$setting]);
     }
     public function login()
     {
