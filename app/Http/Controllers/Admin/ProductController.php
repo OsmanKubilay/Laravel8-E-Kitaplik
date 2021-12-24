@@ -50,14 +50,19 @@ class ProductController extends Controller
         $data->description  = $request->input('descriptions');
         $data->slug = $request->input('slug');
         $data->status = $request->input('status');
+        $data->yazar = $request->input('yazar');
+        $data->yayinevi = $request->input('yayinevi');
+        $data->barkodno = $request->input('barkodno');
+        $data->hamurtipi = $request->input('hamurtipi');
+        $data->sayfasayisi = $request->input('sayfasayisi');
+        $data->baskiyili = $request->input('baskiyili');
+        $data->baskisayisi = $request->input('baskisayisi');
+        $data->dil = $request->input('dil');
+        $data->ebat = $request->input('ebat');
 
 
         $data->category_id= $request->input('category_id');
         $data->user_id=Auth::id();
-        $data->price= $request->input('price');
-        $data->quantity= $request->input('quantity');
-        $data->minquantity= $request->input('minquantity');
-        $data->tax= $request->input('tax');
         $data->detail= $request->input('detail');
         if ($request->file('image')!=null)
         {
@@ -108,14 +113,18 @@ class ProductController extends Controller
         $data->description  = $request->input('descriptions');
         $data->slug = $request->input('slug');
         $data->status = $request->input('status');
-
+        $data->yazar = $request->input('yazar');
+        $data->yayinevi = $request->input('yayinevi');
+        $data->barkodno = $request->input('barkodno');
+        $data->hamurtipi = $request->input('hamurtipi');
+        $data->sayfasayisi = $request->input('sayfasayisi');
+        $data->baskiyili = $request->input('baskiyili');
+        $data->baskisayisi = $request->input('baskisayisi');
+        $data->dil = $request->input('dil');
+        $data->ebat = $request->input('ebat');
 
         $data->category_id= $request->input('category_id');
         $data->user_id=Auth::id();
-        $data->price= $request->input('price');
-        $data->quantity= $request->input('quantity');
-        $data->minquantity= $request->input('minquantity');
-        $data->tax= $request->input('tax');
         $data->detail= $request->input('detail');
         if ($request->file('image')!=null)
         {

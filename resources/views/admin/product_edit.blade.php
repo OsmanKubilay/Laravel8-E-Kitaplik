@@ -64,20 +64,36 @@
                                     <input type="text" name="description" value="{{$data->description}}" class="form-control"  >
                                 </div>
                                 <div class="form-group">
-                                    <label> Price </label>
-                                    <input type="number" name="price" value="{{$data->price}}" class="form-control"  >
+                                    <label> Yazar </label>
+                                    <input type="text" name="yazar" value="{{$data->yazar}}" class="form-control"  >
                                 </div>
                                 <div class="form-group">
-                                    <label> Quantity </label>
-                                    <input type="number" name="quantity" class="form-control" value="{{$data->quantity}}"  >
+                                    <label> Yayınevi </label>
+                                    <input type="text" name="yayinevi" class="form-control" value="{{$data->yayinevi}}"  >
                                 </div>
                                 <div class="form-group">
-                                    <label> Minquantity </label>
-                                    <input type="number" name="minquantity" value="{{$data->minquantity}}" class="form-control"  >
+                                    <label> Barkod No </label>
+                                    <input type="text" name="barkodno" value="{{$data->barkodno}}" class="form-control"  >
                                 </div>
                                 <div class="form-group">
-                                    <label> Tax </label>
-                                    <input type="number" name="tax" value="{{$data->tax}}" class="form-control"  >
+                                    <label> Hamur Tipi </label>
+                                    <input type="text" name="hamurtipi" value="{{$data->hamurtipi}}" class="form-control"  >
+                                </div>
+                                <div class="form-group">
+                                    <label> Sayfa Sayisi </label>
+                                    <input type="number" name="sayfasayisi" value="{{$data->sayfasayisi}}" class="form-control"  >
+                                </div>
+                                <div class="form-group">
+                                    <label> Baskı Yılı </label>
+                                    <input type="number" name="baskiyili" value="{{$data->baskiyili}}" class="form-control"  >
+                                </div>
+                                <div class="form-group">
+                                    <label> Dil </label>
+                                    <input type="text" name="dil" value="{{$data->dil}}" class="form-control"  >
+                                </div>
+                                <div class="form-group">
+                                    <label> Ebat </label>
+                                    <input type="text" name="ebat" value="{{$data->ebat}}" class="form-control"  >
                                 </div>
                                 <div class="form-group">
                                     <label> Detail </label>

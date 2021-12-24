@@ -63,20 +63,36 @@
                                     <input type="text" name="description" class="form-control"  >
                                 </div>
                                 <div class="form-group">
-                                    <label> Price </label>
-                                    <input type="number" name="price" value="0" class="form-control"  >
+                                    <label> Yazar </label>
+                                    <input type="text" name="yazar" class="form-control"  >
                                 </div>
                                 <div class="form-group">
-                                    <label> Quantity </label>
-                                    <input type="number" name="quantity" class="form-control" value="1"  >
+                                    <label> Yayınevi </label>
+                                    <input type="text" name="yayinevi" class="form-control" >
                                 </div>
                                 <div class="form-group">
-                                    <label> Minquantity </label>
-                                    <input type="number" name="minquantity" value="5" class="form-control"  >
+                                    <label> Barkod No </label>
+                                    <input type="text" name="barkodno" class="form-control"  >
                                 </div>
                                 <div class="form-group">
-                                    <label> Tax </label>
-                                    <input type="number" name="tax" value="18" class="form-control"  >
+                                    <label> Hamur Tipi </label>
+                                    <input type="text" name="hamurtipi" class="form-control"  >
+                                </div>
+                                <div class="form-group">
+                                    <label> Sayfa Sayısı </label>
+                                    <input type="number" name="sayfasayisi" class="form-control"  >
+                                </div>
+                                <div class="form-group">
+                                    <label> Baskı Yılı </label>
+                                    <input type="number" name="baskiyili" class="form-control"  >
+                                </div>
+                                <div class="form-group">
+                                    <label> Dil </label>
+                                    <input type="text" name="dil" class="form-control"  >
+                                </div>
+                                <div class="form-group">
+                                    <label> Ebat </label>
+                                    <input type="text" name="ebat" class="form-control"  >
                                 </div>
                                 <div class="form-group">
                                     <label> Detail </label>
@@ -104,7 +120,7 @@
 
                                 </div>
 
-                                <button type="submit" class="btn btn-primary mr-2">Add Product</button>
+                                <button type="submit" class="btn btn-primary mr-2">Add Book</button>
 
                             </form>
                         </div>

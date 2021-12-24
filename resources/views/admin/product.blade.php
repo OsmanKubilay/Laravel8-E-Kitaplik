@@ -40,8 +40,8 @@
                             <th>Id </th>
                             <th>Category </th>
                             <th>Title(s)</th>
-                            <th>Quantity</th>
-                            <th>Price </th>
+                            <th>Yazar </th>
+                            <th>Yayinevi</th>
                             <th>Image </th>
                             <th>Image Gallery </th>
                             <th>Status </th>
@@ -57,8 +57,9 @@
                                     {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category, $rs->category->title) }}
                                 </td>
                                 <td>{{ $rs->title }}</td>
-                                <td>{{ $rs->quantity }}</td>
-                                <td>{{ $rs->price }}</td>
+                                <td>{{ $rs->yazar }}</td>
+                                <td>{{ $rs->yayinevi }}</td>
+
                                 <td>
                                     @if($rs->image)
                                         <img src="{{Storage::url($rs->image)}}" height="30" alt="">
