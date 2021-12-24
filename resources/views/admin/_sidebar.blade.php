@@ -30,9 +30,9 @@ Tip 2: you can also add an image using data-image tag
                 </a>
             </li>
             <li>
-                <a class="nav-link" href="./typography.html">
+                <a class="nav-link" href="{{route('admin_message')}}">
                     <i class="nc-icon nc-paper-2"></i>
-                    <p>Typography</p>
+                    <p>Contact Messages</p>
                 </a>
             </li>
             <li>
