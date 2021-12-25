@@ -42,15 +42,15 @@
                                                 <div class="row">
                                                     <div class="col-sm-4">
                                                         <ul class="list-group">
-                                                            <i class="bi bi-people-fill ">
+                                                            <i class="bi bi-pencil-fill ">
                                                                 <span>Yazar</span>
                                                                 <p>{{$rs->yazar}}</p>
                                                             </i>
-                                                            <i class="bi bi-bag">
+                                                            <i class="bi bi-house-fill">
                                                                 <span>Yayınevi</span>
                                                                 <p>{{$rs->yayinevi}}</p>
                                                             </i>
-                                                            <i class="bi bi-badge-ar">
+                                                            <i class="bi bi-book-half">
                                                                 <span>Sayfa Sayısı </span>
                                                                 <p>{{$rs->sayfasayisi}}</p>
                                                             </i>
@@ -59,15 +59,15 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <ul class="list-group">
-                                                            <i class="bi bi-calendar3">
+                                                            <i class="bi bi-spellcheck">
                                                                 <span>Dil</span>
                                                                 <p>{{$rs->dil}}</p>
                                                             </i>
-                                                            <i class="bi bi-credit-card">
+                                                            <i class="bi bi-arrows-angle-expand">
                                                                 <span>Ebat</span>
                                                                 <p>{{$rs->ebat}}</p>
                                                             </i>
-                                                            <i class="bi bi-credit-card">
+                                                            <i class="bi bi-qr-code">
                                                                 <span>Barkod No</span>
                                                                 <p>{{$rs->barkodno}}</p>
                                                             </i>
