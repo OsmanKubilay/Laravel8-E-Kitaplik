@@ -22,7 +22,8 @@ Route::get('/contact',[\App\Http\Controllers\HomeController::class,'contact'])->
 Route::post('/sendmessage',[\App\Http\Controllers\HomeController::class,'sendmessage'])->name('sendmessage');
 Route::get('/product/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'product'])->name('product');
 Route::get('/categoryproducts/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'categoryproducts'])->name('categoryproducts');
-
+Route::post('/getproduct',[\App\Http\Controllers\HomeController::class,'getproduct'])->name('getproduct');
+Route::post('/productlist/{search}',[\App\Http\Controllers\HomeController::class,'productlist'])->name('productlist');
 
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function (){
