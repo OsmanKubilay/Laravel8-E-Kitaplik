@@ -10,126 +10,38 @@
     @include('home._slider')
     <main id="main">
 
-        <!-- ======= About Section ======= -->
-        <section id="about" class="about">
-            <div class="container">
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-                <div class="row content">
-                    <div class="col-lg-6">
-                        <h2>Eum ipsam laborum deleniti velitena</h2>
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+                    @foreach($book as $rs)
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{{Storage::url($rs->image)}}" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">{{$rs->title}}</h5>
+                                    {{$rs->yazar}}
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}">Görüntüle</a></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0">
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum
-                        </p>
-                        <ul>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
-                            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
-                        </ul>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End About Section -->
-
-        <!-- ======= Clients Section ======= -->
-        <section id="clients" class="clients section-bg">
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('assets') }}/img/clients/client-1.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('assets') }}/img/clients/client-2.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('assets') }}/img/clients/client-3.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('assets') }}/img/clients/client-4.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('assets') }}/img/clients/client-5.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('assets') }}/img/clients/client-6.png" class="img-fluid" alt="">
-                    </div>
+                    @endforeach
 
                 </div>
-
             </div>
-        </section><!-- End Clients Section -->
-
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="icon-box">
-                            <i class="bi bi-briefcase"></i>
-                            <h4><a href="#">Lorem Ipsum</a></h4>
-                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="bi bi-card-checklist"></i>
-                            <h4><a href="#">Dolor Sitema</a></h4>
-                            <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="bi bi-bar-chart"></i>
-                            <h4><a href="#">Sed ut perspiciatis</a></h4>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="bi bi-binoculars"></i>
-                            <h4><a href="#">Nemo Enim</a></h4>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="bi bi-brightness-high"></i>
-                            <h4><a href="#">Magni Dolore</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="bi bi-calendar4-week"></i>
-                            <h4><a href="#">Eiusmod Tempor</a></h4>
-                            <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End Services Section -->
-
+        </section>
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
             <div class="container">
+
 
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-center">

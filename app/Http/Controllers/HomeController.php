@@ -23,11 +23,14 @@ class HomeController extends Controller
     public function index()
     {
         $setting= Setting::first();
-        $slider= Product::select('id','title','image','yazar','slug')->limit(4)->get();
+        $slider= Product::select('id','title','image','yazar','slug')->limit(5)->get();
+        $book= Product::select('id','title','image','yazar','slug')->limit(5)->inRandomOrder()->get();
+        #print_r($book);
 
         $data=[
             'setting'=>$setting,
             'slider'=>$slider,
+            'book'=>$book,
             'page' => 'home'
         ];
         return view('home.index',$data);
@@ -39,6 +42,16 @@ class HomeController extends Controller
         #print_r($data);
         #exit();
         return view('home.product_detail',['data'=>$data,'datalist'=>$datalist]);
+
+    }
+    public function categoryproducts($id,$slug)
+    {
+        $datalist=Product::where('category_id',$id)->get();
+        $data=Category::find($id);
+        #print_r($datalist);
+        #exit();
+        return view('home.category_products',['datalist'=>$datalist,'data'=>$data]);
+
 
     }
 

@@ -19,67 +19,61 @@
                     <h2>Book Detail</h2>
                     <ol>
                         <li><a href="{{route('home')}}">Home</a></li>
-                        <li>Book Detail</li>
+                        <li>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data, $data->title)}}</li>
                     </ol>
                 </div>
             </div>
         </section><!-- End Breadcrumbs -->
 
         <section id="blank_page" class="content">
-            <div class="container">
-                <div class="row content">
+            <div class="container" align="center">
+                <div class="container-body mt-4">
+                    <div class="row r3">
 
-                    <section class="section about-section gray-bg" id="about">
-                        <div class="container">
-                            <div class="row align-items-center flex-row-reverse">
-                                <div class="col-lg-6">
-                                    <div class="about-text go-to">
-                                        <h3 class="dark-color">{{$data->title}}</h3>
-                                        <h6 class="theme-color lead">Yazar :   {{$data->yazar}}</h6>
-                                        <p>
-                                            {!! $data->detail !!}
-                                        </p>
-                                        <div class="row about-list">
-                                            <div class="col-md-6">
-                                                <div class="media">
-                                                    <label>Yayınevi</label>
-                                                    <p>{{$data->yayinevi}}</p>
-                                                </div>
-                                                <div class="media">
-                                                    <label>Sayfa Sayisi</label>
-                                                    <p>{{$data->sayfasayisi}}</p>
-                                                </div>
-                                                <div class="media">
-                                                    <label>Baskı Yılı</label>
-                                                    <p>{{$data->baskiyili}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="media">
-                                                    <label>Dil</label>
-                                                    <p>{{$data->dil}}</p>
-                                                </div>
-                                                <div class="media">
-                                                    <label>Ebat</label>
-                                                    <p>{{$data->ebat}}</p>
-                                                </div>
-                                                <div class="media">
-                                                    <label>Barkod No</label>
-                                                    <p>{{$data->barkodno}}</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="col-md-6 p-0 klo">
+                            <h3 class="dark-color">{{$data->title}}</h3>
+                            <h6 class="theme-color lead">Yazar : {{$data->yazar}}</h6>
+                            <p>
+                                {!! $data->detail !!}
+                            </p>
+                            <div class="row about-list">
+                                <div class="col-md-6">
+                                    <div class="media">
+                                        <label>Yayınevi</label>
+                                        <p>{{$data->yayinevi}}</p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Sayfa Sayisi</label>
+                                        <p>{{$data->sayfasayisi}}</p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Baskı Yılı</label>
+                                        <p>{{$data->baskiyili}}</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="about-avatar">
-                                        <img style="height: 370px" src="{{Storage::url($data->image)}}" title="" alt="">
+                                <div class="col-md-6">
+                                    <div class="media">
+                                        <label>Dil</label>
+                                        <p>{{$data->dil}}</p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Ebat</label>
+                                        <p>{{$data->ebat}}</p>
+                                    </div>
+                                    <div class="media">
+                                        <label>Barkod No</label>
+                                        <p>{{$data->barkodno}}</p>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                    </section>
+                        <div class="col-md-6">
+                            <img src="{{Storage::url($data->image)}}" width="90%" height="95%">
+                        </div>
+                    </div>
+                </div>
+                <div class="row-cols-md-5" align="center">
+                    <a class="float-right btn btn-outline-primary ml-2">Kirala</a>
                 </div>
             </div>
         </section>
