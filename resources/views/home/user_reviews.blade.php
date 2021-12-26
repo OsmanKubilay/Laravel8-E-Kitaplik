@@ -1,5 +1,6 @@
 @extends('layouts.home')
 
+@section('title','My Reviews')
 
 
 @section('content')
@@ -23,18 +24,8 @@
         <section id="blank_page" class="content">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-2">
-                        <div class="sidebar">
-                            <h3 class="sidebar-title">User Menu</h3>
-                            <div class="sidebar-item categories">
-                                <ul>
-                                    <li><a href="#">My Profile </a></li>
-                                    <li><a href="#">My Wishlist </a></li>
-                                    <li><a href="#">My Reviews </a></li>
-                                    <li><a href="#">My Messages </a></li>
-                                </ul>
-                            </div><!-- End sidebar categories-->
-                        </div>
+                    <div id="aside" class="col-md-2">
+                        @include('home.usermenu')
                     </div>
                         <div id="main" class="col-lg-10">
                             <table id="example1" class="table table-bordered table-striped">

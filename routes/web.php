@@ -20,7 +20,7 @@ Route::get('/references',[\App\Http\Controllers\HomeController::class,'reference
 Route::get('/faq',[\App\Http\Controllers\HomeController::class,'faq'])->name('faq');
 Route::get('/contact',[\App\Http\Controllers\HomeController::class,'contact'])->name('contact');
 Route::post('/sendmessage',[\App\Http\Controllers\HomeController::class,'sendmessage'])->name('sendmessage');
-Route::get('/product/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'product'])->name('product');
+Route::get('/product/{id}',[\App\Http\Controllers\HomeController::class,'product'])->name('product');
 Route::get('/categoryproducts/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'categoryproducts'])->name('categoryproducts');
 Route::post('/getproduct',[\App\Http\Controllers\HomeController::class,'getproduct'])->name('getproduct');
 Route::post('/productlist/{search}',[\App\Http\Controllers\HomeController::class,'productlist'])->name('productlist');
@@ -90,6 +90,30 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
     });
 });
+Route::middleware('auth')->prefix('user')->namespace('user')->group(function ()
+{
+    //Route::get('/profile',[\App\Http\Controllers\UserController::class,'index'])->name('userprofile');
+
+    Route::prefix('product')->group(function (){
+        Route::get('/', [\App\Http\Controllers\ProductController::class,'index']) ->name('user_products');
+        Route::get('create', [\App\Http\Controllers\ProductController::class,'create']) ->name('user_product_add');
+        Route::post('store', [\App\Http\Controllers\ProductController::class,'store']) ->name('user_product_store');
+        Route::get('edit/{id}', [\App\Http\Controllers\ProductController::class,'edit']) ->name('user_product_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\ProductController::class,'update']) ->name('user_product_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\ProductController::class,'destroy']) ->name('user_product_delete');
+        Route::get('show', [\App\Http\Controllers\ProductController::class,'show']) ->name('user_product_show');
+
+    });
+    Route::prefix('image')->group(function (){
+
+        Route::get('create/{product_id}', [\App\Http\Controllers\ImageController::class,'create']) ->name('user_image_add');
+        Route::post('store/{product_id}', [\App\Http\Controllers\ImageController::class,'store']) ->name('user_image_store');
+        Route::get('delete/{id}/{product_id}', [\App\Http\Controllers\ImageController::class,'destroy']) ->name('user_image_delete');
+        Route::get('show', [\App\Http\Controllers\ImageController::class,'show']) ->name('user_image_show');
+
+    });
+});
+
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/',[\App\Http\Controllers\UserController::class,'index'])->name('myprofile');
     Route::get('/myreviews',[\App\Http\Controllers\UserController::class,'myreviews'])->name('myreviews');

@@ -25,8 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         $setting= Setting::first();
-        $slider= Product::select('id','title','image','yazar','slug')->limit(5)->get();
-        $book= Product::select('id','title','image','yazar','slug')->limit(5)->inRandomOrder()->get();
+        $slider= Product::select('id','title','image','yazar')->limit(5)->get();
+        $book= Product::select('id','title','image','yazar')->limit(5)->inRandomOrder()->get();
         #print_r($book);
 
         $data=[
@@ -37,7 +37,7 @@ class HomeController extends Controller
         ];
         return view('home.index',$data);
     }
-    public function product($id,$slug)
+    public function product($id)
     {
         $data=Product::find($id);
         $datalist= Image::where('product_id',$id)->get();
@@ -54,7 +54,7 @@ class HomeController extends Controller
         if ($count==1)
         {
             $data= Product::where('title','like','%'.$search.'%')->first();
-            return redirect()->route('product',['id'=>$data->id,'slug'=>$data->slug]);
+            return redirect()->route('product',['id'=>$data->id]);
         }
         else
         {
@@ -66,7 +66,7 @@ class HomeController extends Controller
         $datalist=Product::where('title','like','%'.$search.'%')->get();
         return view('home.search_products',['search'=>$search,'datalist'=>$datalist]);
     }
-    public function categoryproducts($id,$slug)
+    public function categoryproducts($id)
     {
         $datalist=Product::where('category_id',$id)->get();
         $data=Category::find($id);

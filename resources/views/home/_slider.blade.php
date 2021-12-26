@@ -13,7 +13,7 @@
                     <div class="container">
                         <h2 class="animate__animated animate__fadeInDown">{{$rs->title}}</h2>
                         <p class="animate__animated animate__fadeInUp">{{$rs->yazar}}</p>
-                        <a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                        <a href="{{route('product',['id'=>$rs->id])}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
                     </div>
                 </div>
             </div>
