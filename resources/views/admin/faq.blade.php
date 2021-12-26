@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title','CategoryPage')
+@section('title','Frequently Asked Question List')
 
 @section('content')
-<main>
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -11,12 +11,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Categories</h1>
+                        <h1>Frequently Asked Question</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Category</li>
+                            <li class="breadcrumb-item active">Frequently Asked Question</li>
                         </ol>
                     </div>
                 </div>
@@ -26,8 +26,11 @@
         <!-- Main content -->
         <section class="content">
 
+            <!-- Default box -->
+
                 <div class="card-header">
-                    <a href="{{route('admin_category_add')}}" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a>
+                    <a href="{{route('admin_faq_add')}}" type="button" class="btn btn-block btn-info" style="width: 200px">Add Faq</a>
+                    @include('home.message')
                 </div>
 
                 <!-- /.card-header -->
@@ -36,30 +39,35 @@
                         <thead>
                         <tr>
                             <th>Id </th>
-                            <th>Parent </th>
-                            <th>Title(s)</th>
-                            <th>Status</th>
-                            <th>Edit </th>
-                            <th>Delete </th>
+                            <th>Position </th>
+                            <th>Question</th>
+                            <th>Answer </th>
+                            <th>Status </th>
+                            <th style="..." colspan="2"> Actions </th>
                         </tr>
                         </thead>
 
                         <tbody>
                         @foreach( $datalist as $rs)
                             <tr>
-                                <td>{{ $rs->id }}</td>
-                                <td>
-                                    {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}
-                                </td>
-                                <td>{{ $rs->title }}</td>
+
+                                <td>{{ $rs->position }}</td>
+                                <td>{{ $rs->question }}</td>
+                                <td>{!!  $rs->answer !!}</td>
                                 <td>{{ $rs->status }}</td>
-                                <td><a href="{{route('admin_category_edit',['id'=>$rs->id])}}"> Edit </a></td>
-                                <td><a href="{{route('admin_category_delete', ['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure ')"> Delete </a>  </td>
+                                <td><a href="{{route('admin_faq_edit',['id'=>$rs->id])}}"> Edit </a></td>
+                                <td><a href="{{route('admin_faq_delete', ['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure ')"> Delete </a>  </td>
                             </tr>
                         @endforeach
+
+
                     </table>
                 </div>
+                <div class="card-body">
 
+
+
+                </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                     Footer
@@ -72,10 +80,13 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+
+@endsection
+
+@section('footer')
     <script src="{{asset('assets')}}/admin/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="{{asset('assets')}}/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- DataTables  & Plugins -->
     <!-- DataTables  & Plugins -->
     <script src="{{asset('assets')}}/admin/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="{{asset('assets')}}/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -106,8 +117,5 @@
             });
         });
     </script>
-</main>
+
 @endsection
-
-
-

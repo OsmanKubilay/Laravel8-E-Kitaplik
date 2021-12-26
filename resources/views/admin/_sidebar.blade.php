@@ -42,9 +42,9 @@ Tip 2: you can also add an image using data-image tag
                 </a>
             </li>
             <li>
-                <a class="nav-link" href="./maps.html">
+                <a class="nav-link" href="{{route('admin_faq')}}">
                     <i class="nc-icon nc-pin-3"></i>
-                    <p>Maps</p>
+                    <p>Faq</p>
                 </a>
             </li>
             <li>

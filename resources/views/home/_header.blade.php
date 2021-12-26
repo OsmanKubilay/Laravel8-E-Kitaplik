@@ -40,7 +40,7 @@
                 </li>
                 <li><a href="{{'/aboutus'}}">Aboutus</a></li>
                 <li><a href="{{'/references'}}">References</a></li>
-                <li><a href="{{'/fag'}}">fag</a></li>
+                <li><a href="{{'/faq'}}">FAQ</a></li>
 
                 <li><a href="{{'/contact'}}">Contact</a></li>
 

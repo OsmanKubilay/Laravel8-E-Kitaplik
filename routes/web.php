@@ -17,7 +17,7 @@ Route::get('/home',[\App\Http\Controllers\HomeController::class,'index'])->name(
 
 Route::get('/aboutus',[\App\Http\Controllers\HomeController::class,'aboutus'])->name('aboutus');
 Route::get('/references',[\App\Http\Controllers\HomeController::class,'references'])->name('references');
-Route::get('/fag',[\App\Http\Controllers\HomeController::class,'fag'])->name('fag');
+Route::get('/faq',[\App\Http\Controllers\HomeController::class,'faq'])->name('faq');
 Route::get('/contact',[\App\Http\Controllers\HomeController::class,'contact'])->name('contact');
 Route::post('/sendmessage',[\App\Http\Controllers\HomeController::class,'sendmessage'])->name('sendmessage');
 Route::get('/product/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'product'])->name('product');
@@ -77,6 +77,17 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('/update/{id}',[\App\Http\Controllers\Admin\ReviewController::class,'update'])->name('admin_review_update');
         Route::get('/delete/{id}',[\App\Http\Controllers\Admin\ReviewController::class,'delete'])->name('admin_review_delete');
         Route::get('/show/{id}',[\App\Http\Controllers\Admin\ReviewController::class,'show'])->name('admin_review_show');
+    });
+    #Faq
+    Route::prefix('faq')->group(function (){
+        Route::get('/', [\App\Http\Controllers\Admin\FaqController::class,'index']) ->name('admin_faq');
+        Route::get('create', [\App\Http\Controllers\Admin\FaqController::class,'create']) ->name('admin_faq_add');
+        Route::post('store', [\App\Http\Controllers\Admin\FaqController::class,'store']) ->name('admin_faq_store');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\FaqController::class,'edit']) ->name('admin_faq_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\FaqController::class,'update']) ->name('admin_faq_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\FaqController::class,'destroy']) ->name('admin_faq_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\FaqController::class,'show']) ->name('admin_product_show');
+
     });
 });
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
