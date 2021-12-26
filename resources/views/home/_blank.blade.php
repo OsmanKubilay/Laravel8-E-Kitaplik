@@ -26,8 +26,9 @@
 
         <section id="blank_page" class="content">
             <div class="container">
-                <div class="row content">
-                İçerik alanı
+                <div class="row">
+
+                  İçerik
 
                 </div>
             </div>

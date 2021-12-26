@@ -17,7 +17,9 @@
                     </div>
                 </div>
             </form>
-            @livewireScripts
+            @section('footerjs')
+                @livewireScripts
+            @endsection
         </div>
         <nav id="navbar" class="navbar">
             <ul>
@@ -49,7 +51,7 @@
                             <ul>
                                 <li><a href="{{route('myprofile')}}">My Profile</a></li>
                                 <li><a href="#">My Wishlist</a></li>
-                                <li><a href="#">My Reviews</a></li>
+                                <li><a href="{{route('myreviews')}}">My Reviews</a></li>
                                 <li><a href="#">My Messages</a></li>
                                 <li><a href="{{route('logout')}}">Logout</a></li>
                             </ul>

@@ -36,9 +36,9 @@ Tip 2: you can also add an image using data-image tag
                 </a>
             </li>
             <li>
-                <a class="nav-link" href="./icons.html">
+                <a class="nav-link" href="{{route('admin_review')}}">
                     <i class="nc-icon nc-atom"></i>
-                    <p>Icons</p>
+                    <p>Reviews</p>
                 </a>
             </li>
             <li>

@@ -9,7 +9,6 @@
 @section('content')
 
 
-
     <main id="main">
 
         <!-- ======= Breadcrumbs ======= -->
@@ -25,14 +24,14 @@
             </div>
         </section><!-- End Breadcrumbs -->
 
-        <section id="blank_page" class="content">
-            <div class="container" align="center">
-                <div class="container-body mt-4">
+        <section id="product_detail" class="content">
+            <div class="container" data-aos="fade-up">
+                <div class="container-body mt-4" align="center">
                     <div class="row r3">
 
                         <div class="col-md-6 p-0 klo">
                             <h3 class="dark-color">{{$data->title}}</h3>
-                            <h6 class="theme-color lead"> <b>Yazar</b> : {{$data->yazar}}</h6>
+                            <h6 class="theme-color lead"><b>Yazar</b> : {{$data->yazar}}</h6>
                             <p>
                                 {!! $data->detail !!}
                             </p>
@@ -75,6 +74,44 @@
                 <div class="row-cols-md-5" align="center">
                     <a class="float-right btn btn-outline-primary ml-2">Kirala</a>
                 </div>
+
+
+                <div class="blog-comments">
+                    <h4 class="comments-count">Reviews</h4>
+                    @foreach($reviews as $rs)
+                        <div id="comment-2" class="comment mb-2">
+                            <div class="d-flex">
+                                <div class="comment-img"><img width="80%" src="{{asset('assets')}}/img/blog/comments-2.jpg" alt="">
+                                </div>
+                                <div >
+                                    <h5><a href="">{{$rs->user->name}}</a> <a href="#" class="reply"><i
+                                                class="bi bi-reply-fill"></i> Reply</a></h5>
+                                    <time datetime="2020-01-01">{{$rs->created_at}}</time>
+                                    <p>
+                                        <strong>
+                                            {{$rs->subject}}
+                                        </strong>
+                                    </p>
+                                    <p>
+                                        {{$rs->review}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    @endforeach
+
+                    <div class="reply-form">
+                        <h4>Sizin Yorumunuz...</h4>  @include('home.message')
+                        @livewire('review',['id'=>$data->id])
+                    </div>
+                </div>
             </div>
         </section>
+    </main>
+
+    <!-- Vendor JS Files -->
+
+
 @endsection
+
