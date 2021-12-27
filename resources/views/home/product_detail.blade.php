@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="row-cols-md-5" align="center">
-                    <a class="float-right btn btn-outline-primary ml-2">Kirala</a>
+                    <a class="float-right btn btn-outline-primary ml-2" href="{{route('user_reservation_add',['product_id'=>$data->id])}}">Rezerve Et</a>
                 </div>
 
 
