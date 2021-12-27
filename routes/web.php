@@ -89,6 +89,17 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('show', [\App\Http\Controllers\Admin\FaqController::class,'show']) ->name('admin_product_show');
 
     });
+    Route::prefix('reservation')->group(function (){
+        Route::get('/', [\App\Http\Controllers\Admin\ReservationController::class,'index']) ->name('admin_reservations');
+        Route::get('list/{status}', [\App\Http\Controllers\Admin\ReservationController::class,'list']) ->name('admin_reservation_list');
+        Route::get('create/{product_id}', [\App\Http\Controllers\Admin\ReservationController::class,'create']) ->name('admin_reservation_add');
+        Route::post('store/{product_id}', [\App\Http\Controllers\Admin\ReservationController::class,'store']) ->name('admin_reservation_store');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\ReservationController::class,'edit']) ->name('admin_reservation_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\ReservationController::class,'update']) ->name('admin_reservation_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\ReservationController::class,'destroy']) ->name('admin_reservation_delete');
+        Route::get('show/{id}', [\App\Http\Controllers\Admin\ReservationController::class,'show']) ->name('admin_reservation_show');
+
+    });
 });
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function ()
 {

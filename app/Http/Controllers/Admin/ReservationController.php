@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
@@ -16,8 +17,13 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        $datalist=Reservation::where('user_id',Auth::id())->get();
-        return view('home.user_reservation',['datalist'=>$datalist]);
+        $datalist=Reservation::all();
+        return view('admin.reservations',['datalist'=>$datalist]);
+    }
+    public function list($status)
+    {
+        $datalist=Reservation::where('status',$status)->get();
+        return view('admin.reservations',['datalist'=>$datalist]);
     }
 
     /**
@@ -25,9 +31,9 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($product_id)
+    public function create()
     {
-        return view('home.user_reservation_add',['product_id'=>$product_id]);
+        //
     }
 
     /**
@@ -36,21 +42,9 @@ class ReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$product_id)
+    public function store(Request $request)
     {
-        $data = new Reservation();
-        $data->bookdate = $request->input('bookdate');
-        $data->returndate = $request->input('returndate');
-        $data->IP = $_SERVER["REMOTE_ADDR"];
-        $data->note = $request->input('note');
-        $data->user_id = Auth::id();
-        $data->product_id=$product_id;
-        $bookday=strtotime($request->input('bookdate'));
-        $returnday=strtotime($request->input('returndate'));
-        $day=($returnday-$bookday)/(60*60*24);
-        $data->days=$day;
-        $data->save();
-        return redirect()->route('user_reservations');
+        //
     }
 
     /**
@@ -61,9 +55,9 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation,$id)
     {
+        $data=Reservation::find($id);
 
-        $datalist=Reservation::where('user_id',Auth::id())->where('id',Auth::id())->get();
-        return view('home.user_reservation_item',['datalist'=>$datalist]);
+        return view('admin.reservation_items',['data'=>$data]);
     }
 
     /**
@@ -84,9 +78,12 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reservation $reservation)
+    public function update(Request $request, Reservation $reservation,$id)
     {
-        //
+        $data=Reservation::find($id);
+        $data->status=$request->input('status');
+        $data->save();
+        return redirect()->back()->with('success','Reservation Updated');
     }
 
     /**

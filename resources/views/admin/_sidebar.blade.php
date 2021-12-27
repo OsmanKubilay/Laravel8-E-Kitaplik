@@ -47,12 +47,20 @@ Tip 2: you can also add an image using data-image tag
                     <p>Faq</p>
                 </a>
             </li>
-            <li>
-                <a class="nav-link" href="./notifications.html">
-                    <i class="nc-icon nc-bell-55"></i>
-                    <p>Notifications</p>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                    <i class="nc-icon nc-bank"></i>
+                    Reservations
                 </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{route('admin_reservations')}}">All Reservations</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{route('admin_reservation_list',['status'=>'new'])}}">New Reservations</a>
+                    <a class="dropdown-item" href="{{route('admin_reservation_list',['status'=>'accepted'])}}">Accepted Reservations</a>
+                    <a class="dropdown-item" href="{{route('admin_reservation_list',['status'=>'completed'])}}">Completed Reservations</a>
+                </div>
             </li>
+
             <li class="nav-item active active-pro">
                 <a class="nav-link active" href="{{route('admin_setting')}}">
                     <i class="nc-icon nc-alien-33"></i>
