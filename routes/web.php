@@ -39,8 +39,8 @@ Route::middleware('auth')->prefix('admin')->group(function (){
             Route::post('update/{id}',[\App\Http\Controllers\Admin\UserController::class, 'update'])->name('admin_user_update');
             Route::get('delete/{id}',[\App\Http\Controllers\Admin\UserController::class, 'delete'])->name('admin_user_delete');
             Route::get('show/{id}',[\App\Http\Controllers\Admin\UserController::class, 'show'])->name('admin_user_show');
-            Route::get('userrole/{id}',[\App\Http\Controllers\Admin\UserController::class, 'user_role'])->name('admin_user_roles');
-            Route::post('userrolestore/{id}',[\App\Http\Controllers\Admin\UserController::class, 'user_role_store'])->name('admin_user_role_store');
+            Route::get('userrole/{id}',[\App\Http\Controllers\Admin\UserController::class, 'user_roles'])->name('admin_user_roles');
+            Route::post('userrolestore/{id}',[\App\Http\Controllers\Admin\UserController::class, 'user_role_store'])->name('admin_user_role_add');
             Route::get('userroledelete/{userid}/{roleid}',[\App\Http\Controllers\Admin\UserController::class, 'user_role_delete'])->name('admin_user_role_delete');
         });
 #CATEGORY

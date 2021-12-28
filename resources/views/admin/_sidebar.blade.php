@@ -60,6 +60,12 @@ Tip 2: you can also add an image using data-image tag
                     <a class="dropdown-item" href="{{route('admin_reservation_list',['status'=>'completed'])}}">Completed Reservations</a>
                 </div>
             </li>
+            <li>
+                <a class="nav-link" href="{{route('admin_users')}}">
+                    <i class="nc-icon nc-pin-3"></i>
+                    <p>Users</p>
+                </a>
+            </li>
 
             <li class="nav-item active active-pro">
                 <a class="nav-link active" href="{{route('admin_setting')}}">

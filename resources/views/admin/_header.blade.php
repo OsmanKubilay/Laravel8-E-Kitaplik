@@ -34,6 +34,7 @@
                         <span class="d-lg-block">&nbsp;Search</span>
                     </a>
                 </li>
+                @include('home.message')
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
