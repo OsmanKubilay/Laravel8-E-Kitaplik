@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title',$data->title)
+@section('title','Book detail')
 
 @section('description') {{$data->description}} @endsection
 
@@ -62,6 +62,9 @@
                                     <div class="media">
                                         <label><b>Barkod No</b></label>
                                         <p>{{$data->barkodno}}</p>
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +75,12 @@
                     </div>
                 </div>
                 <div class="row-cols-md-5" align="center">
-                    <a class="float-right btn btn-outline-primary ml-2" href="{{route('user_reservation_add',['product_id'=>$data->id])}}">Rezerve Et</a>
+                    @if($data->status == 'True')
+                        <a class="float-right btn btn-outline-primary ml-2" href="{{route('user_reservation_add',['product_id'=>$data->id])}}">Rezerve Et</a>
+                    @elseif($data->status == 'False')
+                        <a class="float-right btn btn-outline-primary ml-2" > Kitap {{$data->reservations->returndate}}'tarihine kadar rezerve </a>
+                    @endif
+
                 </div>
 
 

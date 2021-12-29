@@ -112,7 +112,6 @@ Route::middleware('auth')->prefix('admin')->group(function (){
             Route::post('update/{id}', [\App\Http\Controllers\Admin\ReservationController::class,'update']) ->name('admin_reservation_update');
             Route::get('delete/{id}', [\App\Http\Controllers\Admin\ReservationController::class,'destroy']) ->name('admin_reservation_delete');
             Route::get('show/{id}', [\App\Http\Controllers\Admin\ReservationController::class,'show']) ->name('admin_reservation_show');
-
         });
     });
 });

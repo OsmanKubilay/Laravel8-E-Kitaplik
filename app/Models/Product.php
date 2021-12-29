@@ -21,7 +21,13 @@ class Product extends Model
     }
     public function reservation()
     {
-        return $this->hasMany(Reservation::class);
+        return $this->hasMany(Reservation::class,'product_id','id');
     }
+    public function reservations()
+    {
+        return $this->belongsTo(Reservation::class,'id','product_id');
+    }
+
+
 
 }

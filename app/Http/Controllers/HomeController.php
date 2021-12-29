@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Livewire\Review;
+use App\Models\Review;
 use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Image;
 use App\Models\Message;
 use App\Models\Product;
+use App\Models\Reservation;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +42,7 @@ class HomeController extends Controller
     {
         $data=Product::find($id);
         $datalist= Image::where('product_id',$id)->get();
-        $reviews= \App\Models\Review::where('product_id',$id)->get();
+        $reviews= Review::where('product_id',$id)->get();
         #print_r($data);
         #exit();
         return view('home.product_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);

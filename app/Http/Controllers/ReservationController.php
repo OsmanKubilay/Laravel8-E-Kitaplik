@@ -39,12 +39,16 @@ class ReservationController extends Controller
     public function store(Request $request,$product_id)
     {
         $data = new Reservation();
+        $product=Product::find($product_id);
+        $product->status='False';
+        $product->save();
         $data->bookdate = $request->input('bookdate');
         $data->returndate = $request->input('returndate');
         $data->IP = $_SERVER["REMOTE_ADDR"];
         $data->note = $request->input('note');
         $data->user_id = Auth::id();
         $data->product_id=$product_id;
+
         $bookday=strtotime($request->input('bookdate'));
         $returnday=strtotime($request->input('returndate'));
         $day=($returnday-$bookday)/(60*60*24);
@@ -61,7 +65,6 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation,$id)
     {
-
         $datalist=Reservation::where('user_id',Auth::id())->where('id',Auth::id())->get();
         return view('home.user_reservation_item',['datalist'=>$datalist]);
     }

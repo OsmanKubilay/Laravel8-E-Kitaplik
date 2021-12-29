@@ -75,7 +75,6 @@
                                                     </div>
                                                     <div class="row-cols-md-5" align="right">
                                                         <a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="float-right btn btn-outline-primary ml-2">Detail</a>
-                                                        <a class="float-right btn btn-outline-primary ml-2">Kirala</a>
                                                     </div>
                                                 </div>
                                             </div>
