@@ -15,7 +15,7 @@ class Reservation extends Model
     }
     public function product()
     {
-        return $this->belongsTo(Product::class,'id','product_id');
+        return $this->belongsTo(Product::class);
     }
     public function products()
     {

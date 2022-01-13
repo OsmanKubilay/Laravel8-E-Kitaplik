@@ -19,7 +19,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Review Detail</h3>
+                <h3 class="card-title">Reservation Detail</h3>
                 @include('home.message')
             </div>
 
@@ -69,17 +69,16 @@
                         <th>Status</th>
                         <td>
                             <select name="status">
-                                <option selected> {{$data->status}}</option>
-                                <option>New</option>
-                                <option>Accepted</option>
-                                <option>Completed</option>
+                                <option selected> {{$data->product->status}}</option>
+                                <option>True</option>
+                                <option>False</option>
                             </select>
                         </td>
                         <tr>
                             <td></td>
                             <td>
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary mr-2">Update Review</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Update Reservation</button>
                                 </div>
                             </td>
                         </tr>

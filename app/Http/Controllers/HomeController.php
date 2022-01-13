@@ -46,7 +46,6 @@ class HomeController extends Controller
         #print_r($data);
         #exit();
         return view('home.product_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
-
     }
     public function getproduct(Request $request)
     {

@@ -80,8 +80,13 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $reservation,$id)
     {
+
         $data=Reservation::find($id);
+        $productid=$data->product_id;
+        $datalist=Product::find($productid);
+        $datalist->status=$request->input('status');
         $data->status=$request->input('status');
+        $datalist->save();
         $data->save();
         return redirect()->back()->with('success','Reservation Updated');
     }

@@ -55,9 +55,8 @@ Tip 2: you can also add an image using data-image tag
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{route('admin_reservations')}}">All Reservations</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{route('admin_reservation_list',['status'=>'new'])}}">New Reservations</a>
-                    <a class="dropdown-item" href="{{route('admin_reservation_list',['status'=>'accepted'])}}">Accepted Reservations</a>
-                    <a class="dropdown-item" href="{{route('admin_reservation_list',['status'=>'completed'])}}">Completed Reservations</a>
+                    <a class="dropdown-item" href="{{route('admin_reservation_list',['status'=>'True'])}}">Tamamlanmış Rezervasyonlar</a>
+                    <a class="dropdown-item" href="{{route('admin_reservation_list',['status'=>'False'])}}">Yeni Rezervasyonlar</a>
                 </div>
             </li>
             <li>

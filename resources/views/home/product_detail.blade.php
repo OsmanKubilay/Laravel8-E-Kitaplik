@@ -80,7 +80,6 @@
                     @elseif($data->status == 'False')
                         <a class="float-right btn btn-outline-primary ml-2" > Kitap {{$data->reservations->returndate}}'tarihine kadar rezerve </a>
                     @endif
-
                 </div>
 
 

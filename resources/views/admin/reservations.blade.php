@@ -60,7 +60,7 @@
                                 <td>{{ $rs->bookdate }}</td>
                                 <td>{{ $rs->returndate }}</td>
                                 <td>{{ $rs->days }}</td>
-                                <td>{{ $rs->status }}</td>
+                                <td>{{ $rs->product->status }}</td>
                                 <td><a href="{{route('admin_reservation_show',['id'=>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=800, height=600')">Edit</a> </td>
 
                             </tr>
