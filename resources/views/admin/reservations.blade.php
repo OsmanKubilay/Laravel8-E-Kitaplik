@@ -62,6 +62,7 @@
                                 <td>{{ $rs->days }}</td>
                                 <td>{{ $rs->product->status }}</td>
                                 <td><a href="{{route('admin_reservation_show',['id'=>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=800, height=600')">Edit</a> </td>
+                                <td><a href="{{route('admin_reservation_delete',['id'=>$rs->id])}}">Delete</a> </td>
 
                             </tr>
                         @endforeach

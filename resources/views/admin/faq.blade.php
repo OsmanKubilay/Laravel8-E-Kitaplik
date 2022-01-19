@@ -39,7 +39,7 @@
                         <thead>
                         <tr>
                             <th>Id </th>
-                            <th>Position </th>
+                            <th>Position</th>
                             <th>Question</th>
                             <th>Answer </th>
                             <th>Status </th>
@@ -50,8 +50,8 @@
                         <tbody>
                         @foreach( $datalist as $rs)
                             <tr>
-
-                                <td>{{ $rs->position }}</td>
+                                <td>{{$rs->id}}</td>
+                                <td>{{$rs->position}}</td>
                                 <td>{{ $rs->question }}</td>
                                 <td>{!!  $rs->answer !!}</td>
                                 <td>{{ $rs->status }}</td>

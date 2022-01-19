@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ReservationController extends Controller
 {
@@ -97,8 +98,9 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reservation $reservation)
+    public function destroy(Reservation $reservation,$id)
     {
-        //
+        DB::table('reservations')->where('id','=',$id)->delete();
+        return redirect()->route('admin_reservations')->with('success','Silme İşlemi Başarılı');
     }
 }

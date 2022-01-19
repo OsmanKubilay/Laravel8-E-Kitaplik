@@ -65,7 +65,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation,$id)
     {
-        $datalist=Reservation::where('user_id',Auth::id())->where('id',Auth::id())->get();
+        $datalist=Reservation::where('id',$id)->get();
         return view('home.user_reservation_item',['datalist'=>$datalist]);
     }
 

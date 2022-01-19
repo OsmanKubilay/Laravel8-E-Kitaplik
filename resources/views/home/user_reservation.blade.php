@@ -57,9 +57,8 @@
                                             <td>{{ $rs->bookdate }}</td>
                                             <td>{{ $rs->returndate }}</td>
                                             <td>{{ $rs->days }}</td>
-                                            <td>{{ $rs->status }}</td>
+                                            <td>{{$rs->status}}</td>
                                             <td><a href="{{route('user_reservation_show',['id'=>$rs->id])}}"> Görüntüle </a></td>
-
                                         </tr>
                                     @endforeach
                                 </table>
